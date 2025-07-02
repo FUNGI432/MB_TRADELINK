@@ -145,3 +145,12 @@
   font-weight: 200;
   font-style: italic;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

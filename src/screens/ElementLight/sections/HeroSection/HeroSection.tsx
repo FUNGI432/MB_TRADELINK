@@ -6,15 +6,6 @@ const typingSpeed = 80;
 const pauseTime = 1200;
 
 export const HeroSection = (): JSX.Element => {
-  // Placeholder trusted logos
-  const trustedLogos = [
-    "https://via.placeholder.com/80x40?text=Logo+1",
-    "https://via.placeholder.com/80x40?text=Logo+2",
-    "https://via.placeholder.com/80x40?text=Logo+3",
-    "https://via.placeholder.com/80x40?text=Logo+4",
-    "https://via.placeholder.com/80x40?text=Logo+5",
-  ];
-
   // Typewriter effect state
   const [currentWord, setCurrentWord] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -76,15 +67,18 @@ export const HeroSection = (): JSX.Element => {
       {/* Trusted by row at the bottom */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 w-full">
         <span className="uppercase text-xs text-gray-200 tracking-widest mb-2 text-center">Trusted by</span>
-        <div className="flex gap-4 flex-wrap justify-center">
-          {trustedLogos.map((logo, idx) => (
-            <img
-              key={idx}
-              src={logo}
-              alt={`Trusted logo ${idx + 1}`}
-              className="h-8 w-auto bg-white rounded shadow p-1 border"
-            />
-          ))}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex animate-scroll">
+            {/* Repeat the trusted by image multiple times for seamless loop */}
+            {Array.from({ length: 20 }, (_, i) => (
+              <img
+                key={i}
+                src="/trusted by/TRUSTED_BY_NEW.png"
+                alt="Trusted by"
+                className="h-20 w-auto bg-white rounded shadow p-1 border mx-4 flex-shrink-0"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
