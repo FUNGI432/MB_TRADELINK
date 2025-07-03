@@ -2,105 +2,132 @@ import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const CallToActionSection = (): JSX.Element => {
-  // Blog data for mapping
-  const blogs = [
+  // Company updates data
+  const companyUpdates = [
     {
       id: 1,
-      image: "/blog.png",
-      author: "Juhan Ahamed",
-      date: "Aug 28 2024",
-      title: "Lorem ipsum dolor sit amet,\nconsecutetur adipiscing",
-      authorIcon: "/clip-path-group-18.png",
-      dateIcon: "/clip-path-group-19.png",
+      image: "/saree_products/1.png",
+      category: "Expansion",
+      date: "Dec 15 2024",
+      title: "MB TradeLink Expands to Kolkata",
+      description: "We're excited to announce our new office in Kolkata, strengthening our presence in Eastern India and connecting more manufacturers with buyers.",
+      readTime: "2 min read"
     },
     {
       id: 2,
-      image: "/blog-1.png",
-      author: "Juhan Ahamed",
-      date: "Aug 28 2024",
-      title: "Lorem ipsum dolor sit amet,\nconsecutetur adipiscing…",
-      authorIcon: "/clip-path-group-20.png",
-      dateIcon: "/clip-path-group-21.png",
+      image: "/saree_products/2.png",
+      category: "Partnership",
+      date: "Dec 10 2024",
+      title: "New Partnership with 50+ Manufacturers",
+      description: "MB TradeLink has successfully onboarded 50+ new manufacturers from West Bengal, expanding our network and offering more variety to buyers.",
+      readTime: "3 min read"
     },
     {
       id: 3,
-      image: "/blog-2.png",
-      author: "Juhan Ahamed",
-      date: "Aug 28 2024",
-      title: "Lorem ipsum dolor sit amet,\nconsecutetur adipiscing elit",
-      authorIcon: "/clip-path-group-22.png",
-      dateIcon: "/clip-path-group-23.png",
+      image: "/saree_products/3.png",
+      category: "Achievement",
+      date: "Dec 05 2024",
+      title: "₹10 Crore+ Trade Volume Milestone",
+      description: "We've achieved a significant milestone of facilitating ₹10 crore+ in trade volume, connecting hundreds of businesses across India successfully.",
+      readTime: "2 min read"
     },
   ];
 
   return (
-    <section className="flex flex-col items-center gap-[70px] py-[120px] w-full">
-      <div className="flex flex-col items-center gap-[18px] max-w-[1390px] z-[1]">
-        <h2 className="font-semibold text-[45px] text-[#181c31] text-center leading-[55px] [font-family:'Outfit',Helvetica]">
-          Latest Blogs &amp; News
-        </h2>
-
-        <div className="flex flex-col items-center max-w-[640px]">
-          <p className="font-normal text-[#79808a] text-base text-center leading-6 [font-family:'Inter',Helvetica]">
-            It is a long established fact that a reader will be distracted by
-            the readable content
-            <br />
-            of a page when looking at its layout. The point of using.
-          </p>
-        </div>
+    <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
+      {/* Background decorative elements */}
+      <div className="absolute top-10 left-10 opacity-5">
+        <div className="w-16 h-16 bg-purple-500 rounded-full blur-xl"></div>
+      </div>
+      <div className="absolute bottom-10 right-10 opacity-5">
+        <div className="w-20 h-20 bg-blue-500 rounded-full blur-xl"></div>
       </div>
 
-      <div className="flex flex-col max-w-screen-xl w-full items-start z-0">
-        <div className="flex items-start justify-center gap-10 w-full">
-          {blogs.map((blog) => (
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Company Updates
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-4"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Stay updated with the latest news, achievements, and developments at MB TradeLink as we continue to grow and serve India's textile industry.
+          </p>
+        </div>
+
+        {/* Company Updates Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {companyUpdates.map((update) => (
             <Card
-              key={blog.id}
-              className="flex flex-col w-[400px] items-start rounded-lg overflow-hidden shadow-[0px_8px_70px_#0000000d] bg-[#ffffff01]"
+              key={update.id}
+              className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2"
             >
-              <div className="flex flex-col items-start w-full z-[1] overflow-hidden">
-                <div
-                  className="w-full h-[260px] bg-cover bg-[50%_50%]"
-                  style={{ backgroundImage: `url(${blog.image})` }}
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={update.image}
+                  alt={update.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                {/* Category Badge */}
+                <div className="absolute top-4 left-4">
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    {update.category}
+                  </span>
+                </div>
               </div>
 
-              <CardContent className="flex flex-col items-start gap-3 p-[30px] w-full">
-                <div className="flex flex-wrap items-center gap-[0px_20px] w-full">
-                  <div className="inline-flex flex-col items-start z-[1]">
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-[18px] h-[18px] bg-[100%_100%]"
-                        style={{ backgroundImage: `url(${blog.authorIcon})` }}
-                      />
-                      <div className="inline-flex flex-col items-start">
-                        <div className="mt-[-1.00px] [font-family:'Inter',Helvetica] font-normal text-[#79808a] text-base leading-6 whitespace-nowrap">
-                          {blog.author}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="inline-flex items-center gap-2 z-0">
-                    <div
-                      className="w-[18px] h-[18px] bg-[100%_100%]"
-                      style={{ backgroundImage: `url(${blog.dateIcon})` }}
-                    />
-                    <div className="inline-flex flex-col items-start">
-                      <div className="mt-[-1.00px] [font-family:'Inter',Helvetica] font-normal text-[#79808a] text-base leading-6 whitespace-nowrap">
-                        {blog.date}
-                      </div>
-                    </div>
-                  </div>
+              <CardContent className="p-6">
+                {/* Date and Read Time */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-500 font-medium">
+                    {update.date}
+                  </span>
+                  <span className="text-sm text-blue-600 font-medium">
+                    {update.readTime}
+                  </span>
                 </div>
 
-                <div className="w-[306px] items-start flex flex-col">
-                  <h3 className="mt-[-1.00px] [font-family:'Outfit',Helvetica] font-medium text-[#181c31] text-2xl leading-8 whitespace-pre-line">
-                    {blog.title}
-                  </h3>
-                </div>
+                {/* Title */}
+                <h3 className="font-bold text-xl text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                  {update.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
+                  {update.description}
+                </p>
+
+                {/* Read More Button */}
+                <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300 flex items-center gap-2">
+                  Read Full Update
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">Stay Connected with MB TradeLink</h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              Subscribe to our newsletter to receive the latest company updates, industry insights, and exclusive opportunities directly in your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="px-6 py-3 rounded-full text-gray-900 font-medium w-full max-w-md focus:outline-none focus:ring-2 focus:ring-white/50"
+              />
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 whitespace-nowrap">
+                Subscribe Now
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

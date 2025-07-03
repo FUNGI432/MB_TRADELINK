@@ -7,7 +7,6 @@ import {
   NavigationMenuList,
 } from "../../components/ui/navigation-menu";
 import { AboutUsSection } from "./sections/AboutUsSection";
-import { BlogSection } from "./sections/BlogSection";
 import { CallToActionSection } from "./sections/CallToActionSection";
 
 import { FeaturesSection } from "./sections/FeaturesSection";
@@ -17,7 +16,6 @@ import { HeroSection } from "./sections/HeroSection";
 
 import { MainContentSection } from "./sections/MainContentSection";
 
-import { TeamSection } from "./sections/TeamSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 import { FAQSection } from "./sections/FAQSection";
 import { GallerySection } from "./sections/GallerySection";
@@ -46,8 +44,6 @@ export const ElementLight = (): JSX.Element => {
       <GallerySection />
       <TestimonialsSection />
       <CallToActionSection />
-      <TeamSection />
-      <BlogSection />
       <FAQSection />
       <FooterSection />
 
