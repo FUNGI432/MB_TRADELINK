@@ -16,11 +16,11 @@ export const GallerySection = (): JSX.Element => {
   // Placeholder gallery/case study data
   const galleryItems = [
     {
-      title: "Surat Textile Expo 2023",
+      title: "Kolkata Textile Expo 2023",
       date: "March 2023",
       image: "https://via.placeholder.com/400x250?text=Event+Photo",
       description:
-        "Connected Surat-based mill to 80+ retailers across India in 3 months.",
+        "Connected Kolkata-based mill to 80+ retailers across India in 3 months.",
     },
     {
       title: "Pan-India B2B Meet",
@@ -34,7 +34,7 @@ export const GallerySection = (): JSX.Element => {
       date: "2022",
       image: "https://via.placeholder.com/400x250?text=Success+Story",
       description:
-        "Enabled a Gujarat-based manufacturer to expand into 5 new states.",
+        "Enabled a West Bengal-based manufacturer to expand into 5 new states.",
     },
   ];
 

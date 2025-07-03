@@ -9,7 +9,7 @@ import {
 import { AboutUsSection } from "./sections/AboutUsSection";
 import { BlogSection } from "./sections/BlogSection";
 import { CallToActionSection } from "./sections/CallToActionSection";
-import { ContactSection } from "./sections/ContactSection";
+
 import { FeaturesSection } from "./sections/FeaturesSection";
 import { FooterSection } from "./sections/FooterSection";
 import { HeaderSection } from "./sections/HeaderSection";
@@ -17,11 +17,11 @@ import { HeroSection } from "./sections/HeroSection";
 import { LatestProjectsSection } from "./sections/LatestProjectsSection";
 import { MainContentSection } from "./sections/MainContentSection";
 import { PricingSection } from "./sections/PricingSection";
-import { StatsSection } from "./sections/StatsSection";
 import { TeamSection } from "./sections/TeamSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 import { FAQSection } from "./sections/FAQSection";
 import { GallerySection } from "./sections/GallerySection";
+import { SmoothCursor } from "../../components/ui/smooth-cursor";
 
 export const ElementLight = (): JSX.Element => {
   const [navDark, setNavDark] = useState(false);
@@ -37,9 +37,9 @@ export const ElementLight = (): JSX.Element => {
 
   return (
     <div className="flex flex-col w-full items-start relative bg-white">
+      <SmoothCursor />
       <HeaderSection />
       <HeroSection />
-      <StatsSection />
       <AboutUsSection />
       <FeaturesSection />
       <MainContentSection />
@@ -51,7 +51,6 @@ export const ElementLight = (): JSX.Element => {
       <TeamSection />
       <BlogSection />
       <FAQSection />
-      <ContactSection />
       <FooterSection />
 
       {/* Fixed header */}

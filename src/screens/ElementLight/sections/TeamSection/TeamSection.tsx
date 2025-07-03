@@ -10,19 +10,19 @@ export const TeamSection = (): JSX.Element => {
   const contactInfo = [
     {
       title: "Email Address",
-      value: "support@startup.com",
+      value: "info@mbtradelink.com",
     },
     {
       title: "Office Location",
-      value: "76/A, Green valle, Califonia USA.",
+      value: "8th Floor, 113/1B, Chittaranjan Ave, Kolutolla, Kolkata, West Bengal 700073",
     },
     {
       title: "Phone Number",
-      value: "+009 8754 3433 223",
+      value: "+91 33 4000 0000",
     },
     {
-      title: "Skype Email",
-      value: "example@yourmail.com",
+      title: "Business Hours",
+      value: "Mon - Fri: 9:00 AM - 6:00 PM",
     },
   ];
 

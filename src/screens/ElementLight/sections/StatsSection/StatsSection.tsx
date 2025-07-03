@@ -3,9 +3,9 @@ import React from "react";
 export const StatsSection = (): JSX.Element => {
   // Placeholder data for trusted network
   const trustedStates = [
+    "West Bengal",
     "Gujarat",
     "Maharashtra",
-    "West Bengal",
     "Delhi NCR",
     "Punjab",
     "Rajasthan",

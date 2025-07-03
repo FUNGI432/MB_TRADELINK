@@ -1,4 +1,5 @@
 import React from "react";
+import { MagicCard } from "../../../../components/magicui/magic-card";
 
 export const FeaturesSection = (): JSX.Element => {
   // Steps for 'How It Works'
@@ -42,21 +43,37 @@ export const FeaturesSection = (): JSX.Element => {
       <h2 className="text-3xl font-bold mb-8 text-center">How It Works</h2>
       <div className="flex flex-col md:flex-row gap-8 mb-12 justify-center items-center">
         {steps.map((step, idx) => (
-          <div key={idx} className="flex flex-col items-center bg-white rounded-lg shadow p-6 w-64">
-            <img src={step.icon} alt={step.title} className="mb-4 h-12 w-12" />
-            <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-            <p className="text-gray-700 text-center">{step.desc}</p>
-          </div>
+          <MagicCard 
+            key={idx} 
+            className="p-6 w-64 h-64 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            gradientFrom="#4F46E5"
+            gradientTo="#7C3AED"
+            gradientSize={300}
+          >
+            <div className="flex flex-col items-center text-center h-full justify-center">
+              <img src={step.icon} alt={step.title} className="mb-4 h-12 w-12" />
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">{step.title}</h3>
+              <p className="text-gray-700">{step.desc}</p>
+            </div>
+          </MagicCard>
         ))}
       </div>
       <h2 className="text-2xl font-bold mb-6 text-center">Why Choose Us</h2>
       <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
         {usps.map((usp, idx) => (
-          <div key={idx} className="flex flex-col items-center bg-white rounded-lg shadow p-6 w-64">
-            <img src={usp.icon} alt={usp.title} className="mb-4 h-12 w-12" />
-            <h3 className="font-semibold text-lg mb-2">{usp.title}</h3>
-            <p className="text-gray-700 text-center">{usp.desc}</p>
-          </div>
+          <MagicCard 
+            key={idx} 
+            className="p-6 w-64 h-64 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            gradientFrom="#059669"
+            gradientTo="#3B82F6"
+            gradientSize={300}
+          >
+            <div className="flex flex-col items-center text-center h-full justify-center">
+              <img src={usp.icon} alt={usp.title} className="mb-4 h-12 w-12" />
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">{usp.title}</h3>
+              <p className="text-gray-700">{usp.desc}</p>
+            </div>
+          </MagicCard>
         ))}
       </div>
     </section>

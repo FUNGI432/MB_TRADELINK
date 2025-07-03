@@ -50,7 +50,7 @@ export const HeroSection = (): JSX.Element => {
       <div className="max-w-4xl w-full flex flex-col items-center text-center z-20 relative px-4">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-white drop-shadow-sm tracking-tight">
           Connecting Manufacturers to the<br />
-          <span className="text-blue-400">{displayed}<span className="border-r-2 border-blue-400 animate-pulse ml-1" /></span>
+          <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">{displayed}<span className="border-r-2 border-purple-400 animate-pulse ml-1" /></span>
         </h1>
         <p className="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto">
           MB TradeLink is the trusted bridge between India's top manufacturers and leading retailers & wholesalers. We streamline B2B connections and unlock growth opportunities.

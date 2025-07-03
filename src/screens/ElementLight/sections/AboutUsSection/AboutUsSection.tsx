@@ -1,60 +1,71 @@
 import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
+import { BentoGrid, BentoCard } from "../../../../components/magicui/bento-grid";
+import { RocketIcon, StarIcon, PersonIcon, BackpackIcon } from "@radix-ui/react-icons";
 
 export const AboutUsSection = (): JSX.Element => {
-  // Data for statistics to enable mapping
-  const stats = [
-    { number: "27", label: "Global Brands" },
-    { number: "18", label: "Happy Clients" },
-    { number: "29", label: "Winning Award" },
-    { number: "12", label: "Happy Clients" },
-  ];
-
-  // Data for decorative elements
-  const decorations = [
-    {
-      className: "w-[58px] top-[221px] left-[58px]",
-      imgClassName: "w-[58px] h-[50.03px]",
-      src: "/shape-11-svg.svg",
-      alt: "Shape svg",
-    },
-    {
-      className: "w-[84px] top-[17px] left-[1798px] rotate-90",
-      imgClassName: "w-[42px] h-[84px] mt-[-21.00px] -rotate-90",
-      src: "/shape-07-svg-1.svg",
-      alt: "Shape svg",
-    },
-    {
-      className: "w-[54px] top-[3px] left-[672px]",
-      imgClassName: "w-[54px] h-[54px]",
-      src: "/shape-10-svg.svg",
-      alt: "Shape svg",
-    },
-  ];
-
   return (
-    <section className="relative w-full py-20 bg-white flex flex-col items-center">
-      <h2 className="text-3xl font-bold mb-6 text-center">About MB TradeLink</h2>
-      <div className="max-w-4xl w-full flex flex-col md:flex-row gap-8 items-center justify-center">
-        <img
-          src="https://via.placeholder.com/180x180?text=Founder"
-          alt="Founder"
-          className="rounded-full shadow mb-6 md:mb-0"
-        />
-        <div className="flex-1">
-          <p className="text-lg text-gray-700 mb-4">
-            Founded in Surat, MB TradeLink has rapidly become a trusted bridge between India's top manufacturers and leading retailers & wholesalers. Our mission is to streamline B2B connections, foster long-term partnerships, and unlock growth opportunities across the textile and apparel industry.
-          </p>
-          <p className="text-base text-gray-600 mb-2">
-            <strong>Our Journey:</strong> From humble beginnings, we have expanded our network pan-India, connecting hundreds of businesses and facilitating seamless trade.
-          </p>
-          <p className="text-base text-gray-600 mb-2">
-            <strong>Our Mission:</strong> To empower manufacturers and buyers with verified connections, end-to-end support, and industry insights.
-          </p>
-          <p className="text-base text-gray-600">
-            <strong>Leadership:</strong> <span className="font-semibold">Mr. [Founder Name]</span> (Founder & CEO) leads MB TradeLink with a vision for transparent, efficient, and growth-oriented B2B trade.
-          </p>
+    <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
+      {/* Background decorative elements */}
+      <div className="absolute top-10 left-10 opacity-10">
+        <div className="w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
+      </div>
+      <div className="absolute bottom-10 right-10 opacity-10">
+        <div className="w-20 h-20 bg-purple-500 rounded-full blur-xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            About MB TradeLink
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
         </div>
+
+        <BentoGrid className="!grid !grid-cols-1 md:!grid-cols-2 !auto-rows-[14rem] gap-4 max-w-5xl mx-auto">
+          {/* Company Card - First Column */}
+          <BentoCard
+            name="Our Company"
+            className="!col-span-1 !row-span-3 bg-white border border-gray-200 flex items-center justify-center"
+            background={null}
+            Icon={BackpackIcon}
+            description="A trusted bridge between India's top manufacturers and leading retailers & wholesalers."
+            href="#about"
+            cta="Learn More"
+          />
+          
+          {/* Second Column Cards - Stacked */}
+          {/* Mission Card */}
+          <BentoCard
+            name="Our Mission"
+            className="!col-span-1 !row-span-1 bg-white border border-gray-200"
+            background={null}
+            Icon={RocketIcon}
+            description="To empower manufacturers and buyers with verified connections, end-to-end support, and industry insights."
+            href="#mission"
+            cta="Read Mission"
+          />
+          {/* Journey Card */}
+          <BentoCard
+            name="Our Journey"
+            className="!col-span-1 !row-span-1 bg-white border border-gray-200"
+            background={null}
+            Icon={StarIcon}
+            description="From humble beginnings, we have expanded pan-India, connecting hundreds of businesses and facilitating seamless trade."
+            href="#journey"
+            cta="See Journey"
+          />
+          {/* Leadership Card */}
+          <BentoCard
+            name="Leadership"
+            className="!col-span-1 !row-span-1 bg-white border border-gray-200"
+            background={null}
+            Icon={PersonIcon}
+            description="Mr. [Founder Name] (Founder & CEO) leads MB TradeLink with a vision for transparent, efficient, and growth-oriented B2B trade."
+            href="#leadership"
+            cta="Meet the Team"
+          />
+        </BentoGrid>
       </div>
     </section>
   );
