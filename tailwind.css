@@ -12,6 +12,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
@@ -76,6 +80,9 @@
     --ring: 216 34% 17%;
 
     --radius: 0.5rem;
+  }
+  .theme {
+    --animate-meteor: meteor 5s linear infinite;
   }
 }
 
@@ -152,5 +159,19 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(-500px);
+    opacity: 0;
   }
 }

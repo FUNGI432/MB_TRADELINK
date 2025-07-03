@@ -78,7 +78,7 @@ export const ElementLight = (): JSX.Element => {
 
             {/* Navigation */}
             <NavigationMenu className="mx-auto">
-              <NavigationMenuList className="flex">
+              <NavigationMenuList className="flex space-x-8">
                 {[
                   "Home",
                   "About",
@@ -90,8 +90,11 @@ export const ElementLight = (): JSX.Element => {
                     <div className="inline-flex items-center justify-center px-0 py-7">
                       <div
                         className={
-                          `[font-family:'Inter',Helvetica] font-normal text-base text-center tracking-[0] leading-6 whitespace-nowrap transition-colors duration-300 ` +
-                          (navDark ? "text-black" : "text-white")
+                          `[font-family:'Inter',Helvetica] font-normal text-base text-center tracking-[0] leading-6 whitespace-nowrap transition-all duration-300 cursor-pointer ` +
+                          (navDark 
+                            ? "text-black hover:text-black hover:drop-shadow-[0_0_8px_rgba(0,0,0,0.6)]" 
+                            : "text-white hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+                          )
                         }
                       >
                         {item}

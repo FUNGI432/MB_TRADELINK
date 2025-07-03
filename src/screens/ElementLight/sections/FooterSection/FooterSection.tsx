@@ -1,5 +1,6 @@
 import React from "react";
 import { Separator } from "../../../../components/ui/separator";
+import { Meteors } from "../../../../components/magicui/meteors";
 
 export const FooterSection = (): JSX.Element => {
   // Footer links data
@@ -49,17 +50,40 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   return (
-    <footer className="relative w-full bg-white text-gray-800 overflow-hidden">
-      {/* Background MB TRADELINK watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="text-gray-200 text-8xl font-bold opacity-25 select-none" style={{ fontSize: '8rem', lineHeight: 1 }}>
+    <footer className="relative w-full bg-white text-gray-800 overflow-hidden min-h-[600px]">
+      {/* Meteors Animation Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Meteors 
+          number={20}
+          minDelay={0.2}
+          maxDelay={1.5}
+          minDuration={2}
+          maxDuration={6}
+          angle={225}
+          className="opacity-40"
+        />
+      </div>
+
+      {/* Background MB TRADELINK watermark - Full width */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <div 
+          className="text-gray-200 font-bold opacity-25 select-none whitespace-nowrap"
+          style={{ 
+            fontSize: 'clamp(4rem, 15vw, 12rem)',
+            lineHeight: 1,
+            transform: 'scale(1.2)',
+            width: '100vw',
+            textAlign: 'center',
+            letterSpacing: '-0.02em'
+          }}
+        >
           MB TRADELINK
         </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="flex flex-col lg:flex-row gap-6 py-12">
+        <div className="flex flex-col lg:flex-row gap-6 py-16">
           {/* Company Info */}
           <div className="lg:w-1/5">
             <div className="mb-4">
@@ -157,7 +181,7 @@ export const FooterSection = (): JSX.Element => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="py-6 border-t border-gray-200">
+        <div className="py-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-6">
               <p className="text-gray-500 text-sm">
