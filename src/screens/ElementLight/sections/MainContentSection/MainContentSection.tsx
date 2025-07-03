@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../../../../components/ui/button";
 
 export const MainContentSection = (): JSX.Element => {
   // MB TradeLink services with proper SVG icons
@@ -59,64 +60,122 @@ export const MainContentSection = (): JSX.Element => {
     }
   ];
 
+  const companyUpdates = [
+    {
+      id: 1,
+      title: "New Partnership with Kolkata Textile Hub",
+      date: "March 15, 2024",
+      image: "/surat textile correct .jpeg",
+      excerpt: "We're excited to announce our strategic partnership with the prestigious Kolkata Textile Hub, expanding our network across Eastern India."
+    },
+    {
+      id: 2,
+      title: "Enhanced Quality Verification System",
+      date: "March 10, 2024",
+      image: "/surat textile .jpeg",
+      excerpt: "Introducing our upgraded quality verification system with AI-powered inspection and real-time reporting for better transparency."
+    },
+    {
+      id: 3,
+      title: "Pan-India Expansion Milestone",
+      date: "March 5, 2024",
+      image: "/4.png",
+      excerpt: "MB TradeLink now connects manufacturers and buyers across 25+ states, marking a significant milestone in our growth journey."
+    },
+    {
+      id: 4,
+      title: "Digital Payment Integration",
+      date: "February 28, 2024",
+      image: "/FOOTER.png",
+      excerpt: "Streamlined payment processes with integrated digital payment solutions for faster and more secure transactions."
+    }
+  ];
+
   return (
-    <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="relative w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 opacity-5">
-        <div className="w-20 h-20 bg-blue-500 rounded-full blur-xl"></div>
-      </div>
-      <div className="absolute bottom-10 right-10 opacity-5">
         <div className="w-16 h-16 bg-purple-500 rounded-full blur-xl"></div>
       </div>
+      <div className="absolute bottom-10 right-10 opacity-5">
+        <div className="w-20 h-20 bg-blue-500 rounded-full blur-xl"></div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            What We Do
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Company Updates
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We provide comprehensive B2B solutions to connect manufacturers with buyers, 
-            facilitating seamless trade relationships across India's textile industry.
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+            Stay updated with the latest news, partnerships, and developments at MB TradeLink.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {services.map((service, idx) => (
-            <div 
-              key={idx} 
-              className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2 h-80 flex flex-col justify-center"
+        {/* Updates Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+          {companyUpdates.map((update) => (
+            <div
+              key={update.id}
+              className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 transform hover:-translate-y-2"
             >
-              {/* Icon */}
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-gray-50 rounded-full group-hover:bg-blue-50 transition-colors duration-300">
-                  {service.icon}
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="text-center">
-                <h3 className="font-bold text-xl mb-3 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.desc}
-                </p>
+              {/* Image */}
+              <div className="relative h-48 md:h-56 overflow-hidden">
+                <img
+                  src={update.image}
+                  alt={update.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Content */}
+              <div className="p-4 md:p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs md:text-sm text-blue-600 font-semibold">
+                    {update.date}
+                  </span>
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                </div>
+                
+                <h3 className="font-bold text-sm md:text-base lg:text-lg text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+                  {update.title}
+                </h3>
+                
+                <p className="text-xs md:text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">
+                  {update.excerpt}
+                </p>
+                
+                <button className="text-blue-600 font-semibold text-xs md:text-sm hover:text-blue-700 transition-colors duration-300 flex items-center">
+                  Read More
+                  <svg className="w-3 h-3 md:w-4 md:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Explore Our Services
-          </button>
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 md:p-8 text-white">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto text-sm md:text-base">
+              Join thousands of manufacturers and buyers who trust MB TradeLink for their B2B connections and growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
+                Get Started Today
+              </Button>
+              <Button variant="outline" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
+                Learn More
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

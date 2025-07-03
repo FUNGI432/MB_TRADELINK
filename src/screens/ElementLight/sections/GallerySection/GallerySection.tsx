@@ -2,54 +2,65 @@ import React from "react";
 import { Lens } from "../../../../components/magicui/lens";
 
 export const GallerySection = (): JSX.Element => {
-  // Gallery items with actual content
   const galleryItems = [
     {
-      title: "Kolkata Textile Expo 2023",
-      date: "March 2023",
-      image: "/saree_products/1.png",
-      description: "Connected Kolkata-based mill to 80+ retailers across India in 3 months.",
-      category: "Events"
+      id: 1,
+      src: "/saree_products/1.png",
+      alt: "Traditional Saree Collection",
+      category: "Traditional Wear"
     },
     {
-      title: "Pan-India B2B Meet",
-      date: "July 2023",
-      image: "/saree_products/2.png",
-      description: "Facilitated 120+ new trade partnerships for manufacturers and buyers.",
-      category: "Networking"
+      id: 2,
+      src: "/saree_products/2.png",
+      alt: "Designer Saree Collection",
+      category: "Designer Wear"
     },
     {
-      title: "Case Study: Growth Story",
-      date: "2022",
-      image: "/saree_products/3.png",
-      description: "Enabled a West Bengal-based manufacturer to expand into 5 new states.",
-      category: "Success"
+      id: 3,
+      src: "/saree_products/3.png",
+      alt: "Bridal Saree Collection",
+      category: "Bridal Collection"
     },
     {
-      title: "Premium Saree Collection",
-      date: "2024",
-      image: "/saree_products/4.png",
-      description: "Exclusive handcrafted sarees showcasing traditional Indian craftsmanship.",
-      category: "Products"
+      id: 4,
+      src: "/saree_products/4.png",
+      alt: "Casual Saree Collection",
+      category: "Casual Wear"
     },
     {
-      title: "Designer Collection Launch",
-      date: "2024",
-      image: "/saree_products/5.png",
-      description: "Launch of our latest designer saree collection with modern aesthetics.",
-      category: "Launch"
+      id: 5,
+      src: "/saree_products/5.png",
+      alt: "Party Wear Saree",
+      category: "Party Wear"
     },
     {
-      title: "Artisan Workshop",
-      date: "2023",
-      image: "/saree_products/6.png",
-      description: "Supporting local artisans and preserving traditional weaving techniques.",
-      category: "Workshop"
+      id: 6,
+      src: "/saree_products/6.png",
+      alt: "Silk Saree Collection",
+      category: "Silk Collection"
+    },
+    {
+      id: 7,
+      src: "/saree_products/7.png",
+      alt: "Cotton Saree Collection",
+      category: "Cotton Collection"
+    },
+    {
+      id: 8,
+      src: "/saree_products/8.png",
+      alt: "Georgette Saree Collection",
+      category: "Georgette Collection"
+    },
+    {
+      id: 9,
+      src: "/saree_products/9.png",
+      alt: "Chiffon Saree Collection",
+      category: "Chiffon Collection"
     }
   ];
 
   return (
-    <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="relative w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 opacity-5">
         <div className="w-16 h-16 bg-purple-500 rounded-full blur-xl"></div>
@@ -58,56 +69,51 @@ export const GallerySection = (): JSX.Element => {
         <div className="w-20 h-20 bg-blue-500 rounded-full blur-xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Gallery & Success Stories
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Our Product Gallery
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Explore our journey through events, partnerships, and the beautiful products that connect India's textile industry.
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+            Explore our diverse collection of high-quality textile products from trusted manufacturers across India.
           </p>
         </div>
 
-        {/* Gallery Grid with Lens */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 max-w-6xl mx-auto">
-          {galleryItems.map((item, idx) => (
-            <div key={idx} className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
-              {/* Image with Lens */}
-              <div className="relative h-64 overflow-hidden">
-                <Lens zoomFactor={1.5} lensSize={150}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </Lens>
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                    {item.category}
-                  </span>
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-bold text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-                    {item.title}
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {galleryItems.map((item) => (
+            <div key={item.id} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <Lens zoomFactor={1.5} lensSize={150}>
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-64 md:h-80 object-cover"
+                />
+              </Lens>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-white font-semibold text-sm md:text-base mb-1">
+                    {item.alt}
                   </h3>
+                  <p className="text-gray-200 text-xs md:text-sm">
+                    {item.category}
+                  </p>
                 </div>
-                <span className="text-sm text-gray-500 mb-3 block">{item.date}</span>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  {item.description}
-                </p>
-                <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                  Learn More →
-                </button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-12 md:mt-16">
+          <p className="text-base md:text-lg text-gray-600 mb-6">
+            Want to see more of our exclusive collections?
+          </p>
+          <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            View All Products
+          </button>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { RocketIcon, StarIcon, PersonIcon, BackpackIcon } from "@radix-ui/react-
 
 export const AboutUsSection = (): JSX.Element => {
   return (
-    <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="relative w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 opacity-10">
         <div className="w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
@@ -13,16 +13,16 @@ export const AboutUsSection = (): JSX.Element => {
         <div className="w-20 h-20 bg-purple-500 rounded-full blur-xl"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             About MB TradeLink
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
         </div>
 
-        <BentoGrid className="!grid !grid-cols-1 md:!grid-cols-2 !auto-rows-[14rem] gap-4 max-w-5xl mx-auto">
+        <BentoGrid className="!grid !grid-cols-1 md:!grid-cols-2 !auto-rows-[12rem] md:!auto-rows-[14rem] gap-4 max-w-5xl mx-auto">
           {/* Company Card - First Column - Black Texture */}
           <BentoCard
             name="Our Company"

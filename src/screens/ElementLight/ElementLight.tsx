@@ -6,6 +6,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "../../components/ui/navigation-menu";
+import { MobileNavigation } from "../../components/ui/mobile-navigation";
 import { AboutUsSection } from "./sections/AboutUsSection";
 import { CallToActionSection } from "./sections/CallToActionSection";
 
@@ -34,7 +35,7 @@ export const ElementLight = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full items-start relative bg-white">
+    <div className="flex flex-col w-full items-start relative bg-white pb-20 md:pb-0">
       <SmoothCursor />
       <HeaderSection />
       <HeroSection />
@@ -47,10 +48,10 @@ export const ElementLight = (): JSX.Element => {
       <FAQSection />
       <FooterSection />
 
-      {/* Fixed header */}
+      {/* Fixed header - Desktop Only */}
       <header
         className={
-          `flex flex-col w-full items-center fixed top-0 left-0 z-50 transition-colors duration-300 ` +
+          `flex flex-col w-full items-center fixed top-0 left-0 z-50 transition-colors duration-300 hidden md:flex ` +
           `backdrop-blur-lg` // glassy effect
         }
         style={{ 
@@ -115,8 +116,13 @@ export const ElementLight = (): JSX.Element => {
         </div>
       </header>
 
+      {/* Mobile Navigation - Mobile Only */}
+      <div className="block md:hidden">
+        <MobileNavigation />
+      </div>
+
       {/* Scroll to top button */}
-      <Button className="flex w-10 h-10 items-center justify-center fixed bottom-8 right-8 bg-[#4e6bff] rounded p-0">
+      <Button className="flex w-10 h-10 items-center justify-center fixed bottom-8 right-8 bg-[#4e6bff] rounded p-0 z-40">
         <ChevronUpIcon className="w-5 h-5" />
       </Button>
     </div>
