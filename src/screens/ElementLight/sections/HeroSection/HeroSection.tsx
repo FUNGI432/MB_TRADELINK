@@ -17,7 +17,7 @@ export const HeroSection = (): JSX.Element => {
   }, [currentIndex, fullText]);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0 min-h-screen"

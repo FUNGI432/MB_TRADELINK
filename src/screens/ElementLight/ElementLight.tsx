@@ -81,14 +81,15 @@ export const ElementLight = (): JSX.Element => {
             <NavigationMenu className="mx-auto">
               <NavigationMenuList className="flex space-x-8">
                 {[
-                  "Home",
-                  "About",
-                  "Features",
-                  "Pages",
-                  "Support",
+                  { label: "Home", href: "#home" },
+                  { label: "About", href: "#about" },
+                  { label: "Services", href: "#services" },
+                  { label: "Partners", href: "#partners" },
+                  { label: "Company", href: "#company" },
+                  { label: "Contact", href: "#contact" },
                 ].map((item, idx) => (
-                  <NavigationMenuItem className="h-[66px]" key={item}>
-                    <div className="inline-flex items-center justify-center px-0 py-7">
+                  <NavigationMenuItem className="h-[66px]" key={item.label}>
+                    <a href={item.href} className="inline-flex items-center justify-center px-0 py-7">
                       <div
                         className={
                           `[font-family:'Inter',Helvetica] font-normal text-base text-center tracking-[0] leading-6 whitespace-nowrap transition-all duration-300 cursor-pointer ` +
@@ -98,9 +99,9 @@ export const ElementLight = (): JSX.Element => {
                           )
                         }
                       >
-                        {item}
+                        {item.label}
                       </div>
-                    </div>
+                    </a>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>

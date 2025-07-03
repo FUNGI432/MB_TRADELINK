@@ -106,7 +106,7 @@ export const TestimonialsSection = (): JSX.Element => {
   };
 
   return (
-    <section className="relative w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section id="partners" className="relative w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 opacity-5">
         <div className="w-16 h-16 bg-purple-500 rounded-full blur-xl"></div>
