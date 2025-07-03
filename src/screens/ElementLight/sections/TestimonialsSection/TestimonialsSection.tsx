@@ -70,17 +70,17 @@ export const TestimonialsSection = (): JSX.Element => {
     const cardTotalWidth = cardWidth + gap;
     const originalTestimonialsLength = testimonials.length;
     const resetPosition = originalTestimonialsLength * cardTotalWidth;
-    const scrollSpeed = 1.5; // Fixed speed
+    const scrollSpeed = 0.5; // Pixels per frame
 
     const animate = () => {
-      scrollPosition += scrollSpeed;
+      scrollPosition -= scrollSpeed; // Negative for right to left movement
       
       // Reset position when we've scrolled through one set of testimonials
-      if (scrollPosition >= resetPosition) {
+      if (Math.abs(scrollPosition) >= resetPosition) {
         scrollPosition = 0;
       }
       
-      carousel.scrollLeft = scrollPosition;
+      carousel.style.transform = `translateX(${scrollPosition}px)`;
       animationId = requestAnimationFrame(animate);
     };
 
@@ -116,15 +116,18 @@ export const TestimonialsSection = (): JSX.Element => {
         </div>
 
         {/* Endless Carousel with increased frame size */}
-        <div className="relative mb-20 py-12">
+        <div className="relative mb-20 py-12 overflow-hidden">
           {/* Gradient overlays for smooth fade effect */}
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
           
           <div
             ref={carouselRef}
-            className="flex gap-8 overflow-hidden"
-            style={{ scrollBehavior: 'smooth' }}
+            className="flex gap-8"
+            style={{ 
+              width: 'fit-content',
+              transition: 'transform 0.1s linear'
+            }}
           >
             {duplicatedTestimonials.map((testimonial, idx) => (
               <Card
