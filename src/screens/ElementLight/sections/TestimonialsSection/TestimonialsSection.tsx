@@ -1,194 +1,138 @@
 import React from "react";
-import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { Switch } from "../../../../components/ui/switch";
 
 export const TestimonialsSection = (): JSX.Element => {
-  // Pricing plan data
-  const pricingPlans = [
+  // Testimonials data
+  const testimonials = [
     {
-      title: "Starter",
-      price: "$29",
-      buttonColor: "bg-[#f36a8d]",
-      features: [
-        "400 GB Storage",
-        "Unlimited Photos & Videos",
-        "Exclusive Support",
-      ],
+      name: "Rajesh Kumar",
+      position: "Textile Manufacturer",
+      company: "Kolkata Textiles Ltd",
+      content: "MB TradeLink transformed our business. We connected with 50+ new buyers within 3 months and expanded our reach across 5 states. The platform is incredibly user-friendly and the support team is always helpful.",
+      rating: 5,
+      image: "/saree_products/1.png"
     },
     {
-      title: "Growth Plan",
-      price: "$59",
-      buttonColor: "bg-[#4e6bff]",
-      features: [
-        "400 GB Storage",
-        "Unlimited Photos & Videos",
-        "Exclusive Support",
-      ],
+      name: "Priya Sharma",
+      position: "Fashion Retailer",
+      company: "Elegance Boutique",
+      content: "Finding reliable suppliers was always a challenge until we discovered MB TradeLink. The quality verification and transparent pricing have made sourcing much easier. Highly recommended for any fashion business.",
+      rating: 5,
+      image: "/saree_products/2.png"
     },
     {
-      title: "Business",
-      price: "$139",
-      buttonColor: "bg-[#f36a8d]",
-      features: [
-        "400 GB Storage",
-        "Unlimited Photos & Videos",
-        "Exclusive Support",
-      ],
-    },
-  ];
-
-  // Decorative shapes data
-  const decorativeShapes = [
-    {
-      src: "/shape-06-svg-1.svg",
-      alt: "Shape svg",
-      className: "w-[43px] h-[86px]",
-      wrapperClassName: "top-[118px] left-48",
+      name: "Amit Patel",
+      position: "Export Manager",
+      company: "Surat Silk Exports",
+      content: "The B2B networking events organized by MB TradeLink have been game-changing. We've secured international contracts worth over ₹2 crores through their platform. Professional team with excellent service.",
+      rating: 5,
+      image: "/saree_products/3.png"
     },
     {
-      src: "/shape-03-svg.svg",
-      alt: "Shape svg",
-      className: "w-[85px] h-[46px]",
-      wrapperClassName: "top-[312px] left-[1451px]",
+      name: "Sneha Reddy",
+      position: "Designer",
+      company: "Artisan Creations",
+      content: "As a small designer, I was struggling to find quality fabric suppliers. MB TradeLink connected me with authentic weavers and helped me scale my business. The platform truly supports local artisans.",
+      rating: 5,
+      image: "/saree_products/4.png"
     },
     {
-      src: "/shape-07-svg.svg",
-      alt: "Shape svg",
-      className: "w-[100px] h-[50px]",
-      wrapperClassName: "top-[892px] left-[1724px]",
-    },
-  ];
-
-  // Background images data
-  const backgroundImages = [
-    {
-      src: "/group.png",
-      alt: "Group",
-      className: "w-[2339px] h-[1852px] top-[640px] left-[-1778px]",
-      wrapperClassName: "top-0 left-0",
-      wrapperWidth: "w-[927px]",
+      name: "Vikram Singh",
+      position: "Procurement Head",
+      company: "National Retail Chain",
+      content: "We've been using MB TradeLink for over 2 years now. The platform's quality assurance and timely delivery have made it our go-to source for textile procurement. Excellent business partner.",
+      rating: 5,
+      image: "/saree_products/5.png"
     },
     {
-      src: "/group-1.png",
-      alt: "Group",
-      className: "w-[1728px] h-[1802px] top-[-1510px] left-[94px]",
-      wrapperClassName: "top-[70px] left-[893px]",
-      wrapperWidth: "w-[1027px]",
-    },
+      name: "Meera Iyer",
+      position: "Founder",
+      company: "Heritage Weaves",
+      content: "MB TradeLink helped us preserve traditional weaving techniques while connecting us with modern markets. Their commitment to supporting artisans while promoting business growth is commendable.",
+      rating: 5,
+      image: "/saree_products/6.png"
+    }
   ];
 
   return (
-    <section className="relative w-full bg-[#f4f7fa] py-24">
-      <div className="relative mx-auto max-w-[1390px]">
-        {/* Decorative shapes */}
-        {decorativeShapes.map((shape, index) => (
-          <div
-            key={`shape-${index}`}
-            className={`absolute ${shape.wrapperClassName}`}
-          >
-            <div className="flex flex-col items-center justify-center">
-              <img
-                className={`relative ${shape.className}`}
-                alt={shape.alt}
-                src={shape.src}
-              />
-            </div>
-          </div>
-        ))}
+    <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
+      {/* Background decorative elements */}
+      <div className="absolute top-10 left-10 opacity-5">
+        <div className="w-16 h-16 bg-purple-500 rounded-full blur-xl"></div>
+      </div>
+      <div className="absolute bottom-10 right-10 opacity-5">
+        <div className="w-20 h-20 bg-blue-500 rounded-full blur-xl"></div>
+      </div>
 
-        {/* Background images */}
-        {backgroundImages.map((image, index) => (
-          <div
-            key={`bg-${index}`}
-            className={`absolute ${image.wrapperClassName} ${image.wrapperWidth}`}
-          >
-            <div className="relative w-full h-full overflow-hidden">
-              <img
-                className={`absolute ${image.className}`}
-                alt={image.alt}
-                src={image.src}
-              />
-            </div>
-          </div>
-        ))}
-
-        {/* Section header */}
-        <div className="flex flex-col items-center gap-[18px] mb-16">
-          <h2 className="font-['Outfit',Helvetica] font-semibold text-[#181c31] text-[45px] leading-[55px] text-center">
-            Great Affordable Pricing Plans
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            What Our Partners Say
           </h2>
-          <div className="max-w-[640px]">
-            <p className="font-['Inter',Helvetica] font-normal text-[#79808a] text-base text-center leading-6">
-              It is a long established fact that a reader will be distracted by
-              the readable content
-              <br />
-              of a page when looking at its layout. The point of using.
-            </p>
-          </div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-4"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Discover why manufacturers and buyers across India trust MB TradeLink for their B2B textile connections and growth.
+          </p>
         </div>
 
-        {/* Billing toggle */}
-        <div className="flex justify-center items-center mb-12">
-          <span className="font-['Inter',Helvetica] font-medium text-[#181c31] text-base leading-6 mr-4">
-            Bill Monthly
-          </span>
-          <Switch className="bg-[#4e6bff]" />
-          <span className="font-['Inter',Helvetica] font-medium text-[#181c31] text-base leading-6 ml-4">
-            Bill Annually
-          </span>
-        </div>
-
-        {/* Pricing cards */}
-        <div className="flex justify-center gap-10">
-          {pricingPlans.map((plan, index) => (
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {testimonials.map((testimonial, idx) => (
             <Card
-              key={`plan-${index}`}
-              className="w-[380px] bg-white rounded-lg shadow-[0px_8px_70px_#0000000d]"
+              key={idx}
+              className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200"
             >
-              <CardContent className="p-0">
-                <div className="flex flex-col items-center px-[30px] pt-11">
-                  <h3 className="font-['Outfit',Helvetica] font-normal text-[#181c31] text-[22px] leading-[26px] text-center">
-                    {plan.title}
-                  </h3>
+              <CardContent className="p-8">
+                {/* Rating */}
+                <div className="flex items-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
 
-                  <div className="flex items-center justify-center gap-1.5 mt-[38px]">
-                    <span className="font-['Outfit',Helvetica] font-semibold text-[#181c31] text-[40px] leading-[42px]">
-                      {plan.price}
-                    </span>
-                    <span className="font-['Inter',Helvetica] font-normal text-[#181c31] text-sm leading-5">
-                      /per month
-                    </span>
+                {/* Testimonial Content */}
+                <blockquote className="text-gray-700 leading-relaxed mb-6 italic">
+                  "{testimonial.content}"
+                </blockquote>
+
+                {/* Author Info */}
+                <div className="flex items-center">
+                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-
-                  <p className="font-['Inter',Helvetica] font-normal text-[#79808a] text-base leading-6 mt-2">
-                    No credit card required
-                  </p>
-
-                  <Button
-                    className={`${plan.buttonColor} text-white rounded-full mt-[30px] px-[52px] py-2.5 font-['Inter',Helvetica] font-medium text-base`}
-                  >
-                    Try for free
-                  </Button>
-
-                  <div className="flex flex-col items-center gap-3 mt-[42px] w-full">
-                    {plan.features.map((feature, featureIndex) => (
-                      <p
-                        key={`feature-${index}-${featureIndex}`}
-                        className="font-['Inter',Helvetica] font-normal text-[#79808a] text-base text-center leading-6 w-full"
-                      >
-                        {feature}
-                      </p>
-                    ))}
+                  <div>
+                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-600">{testimonial.position}</p>
+                    <p className="text-sm text-blue-600 font-medium">{testimonial.company}</p>
                   </div>
-
-                  <p className="font-['Inter',Helvetica] font-normal text-[#181c31] text-base text-center leading-6 mt-[42px] mb-11">
-                    7-day free trial
-                  </p>
                 </div>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              Join thousands of manufacturers and buyers who trust MB TradeLink for their B2B connections and growth.
+            </p>
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
+              Get Started Today
+            </button>
+          </div>
         </div>
       </div>
     </section>

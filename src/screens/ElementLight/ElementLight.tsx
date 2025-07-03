@@ -14,9 +14,9 @@ import { FeaturesSection } from "./sections/FeaturesSection";
 import { FooterSection } from "./sections/FooterSection";
 import { HeaderSection } from "./sections/HeaderSection";
 import { HeroSection } from "./sections/HeroSection";
-import { LatestProjectsSection } from "./sections/LatestProjectsSection";
+
 import { MainContentSection } from "./sections/MainContentSection";
-import { PricingSection } from "./sections/PricingSection";
+
 import { TeamSection } from "./sections/TeamSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 import { FAQSection } from "./sections/FAQSection";
@@ -43,11 +43,9 @@ export const ElementLight = (): JSX.Element => {
       <AboutUsSection />
       <FeaturesSection />
       <MainContentSection />
-      <LatestProjectsSection />
       <GallerySection />
       <TestimonialsSection />
       <CallToActionSection />
-      <PricingSection />
       <TeamSection />
       <BlogSection />
       <FAQSection />
@@ -89,7 +87,6 @@ export const ElementLight = (): JSX.Element => {
                   "Home",
                   "About",
                   "Features",
-                  "Pricing",
                   "Pages",
                   "Support",
                 ].map((item, idx) => (
